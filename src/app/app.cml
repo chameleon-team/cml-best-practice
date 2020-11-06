@@ -14,6 +14,7 @@ class App {
 }
 
 export default new App();
+//需要注意多个分包复用同一个页面这样的情况
 </script>
 
 <style>
@@ -24,10 +25,32 @@ export default new App();
 {
   "wx": {
     "window": {
-      "backgroundTextStyle": "light",
+      "backgroundTextStyle":"light",
       "navigationBarBackgroundColor": "#fff",
       "navigationBarTitleText": "Chameleon",
-      "navigationBarTextStyle": "black"
+      "navigationBarTextStyle":"black"
+    },
+    "subPackages":[{
+      "root":"pages/subpage",
+      "pages":[
+        "page1/page1"
+      ]
+    },
+    {
+      "root":"subpage2",
+      "pages":[
+        "page2/page2"
+      ]
+    }],
+    "preloadRule": {
+      "pages/index/index": {
+        "network": "all",
+        "packages": ["pages/subpage"]
+      },
+      "pages/subpage/page1/page1": {
+        "network": "all",
+        "packages": ["subpage2"]
+      }
     }
   },
   "baidu": {
@@ -36,27 +59,49 @@ export default new App();
       "navigationBarBackgroundColor": "#ffffff",
       "navigationBarTitleText": "Chameleon",
       "navigationBarTextStyle": "black"
+    },
+    "subPackages":[{
+      "root":"pages/subpage",
+      "pages":[
+          "page1/page1"
+        ]
+      },
+      {
+        "root":"subpage2",
+        "pages":[
+          "page2/page2"
+        ]
+      }
+    ],
+    "preloadRule": {
+      "pages/index/index": {
+        "network": "all",
+        "packages": ["pages/subpage"]
+      }
     }
   },
   "alipay": {
-    "window": {
-      "defaultTitle": "Chameleon"
-    }
-  },
-  "qq": {
-    "window": {
-      "backgroundTextStyle": "light",
-      "navigationBarBackgroundColor": "#fff",
-      "navigationBarTitleText": "Chameleon",
-      "navigationBarTextStyle": "black"
-    }
-  },
-  "tt": {
-    "window": {
-      "backgroundTextStyle": "light",
-      "navigationBarBackgroundColor": "#fff",
-      "navigationBarTitleText": "Chameleon",
-      "navigationBarTextStyle": "black"
+      "window": {
+        "defaultTitle": "Chameleon"
+      },
+      "subPackages":[{
+        "root":"pages/subpage",
+        "pages":[
+          "page1/page1"
+        ]
+      },
+      {
+        "root":"subpage2",
+        "pages":[
+          "page2/page2"
+        ]
+      }
+    ],
+    "preloadRule": {
+      "pages/index/index": {
+        "network": "all",
+        "packages": ["pages/subpage"]
+      }
     }
   }
 }

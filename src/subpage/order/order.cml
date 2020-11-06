@@ -1,19 +1,30 @@
 <template>
-  <page title="chameleon">
-      <scroller height="{{-1}}">
         <view class="scroller-wrap">
-          <demo-com title="{{title}}" image-src="{{chameleonSrc}}"></demo-com>
+          
+          <view c-bind:tap="handleOrderAPI">handleOrderAPI</view>
+          
         </view>
-      </scroller>
-  </page>
 </template>
 
 <script>
-
+import subUtils from '../../utils/utils.js'
 class Index  {
   data = {
-    title: "chameleon",
+    title: "subpage",
     chameleonSrc: require('../../assets/images/chameleon.png')
+  }
+  methods = {
+    handleOrderAPI(){
+      console.log('handleOrderAPI');
+      utils.baseRequest({url:'/api/order/timepicker'}).then((res) => {
+      console.log('order-handleOrderAPI',res)
+    })
+    }
+  }
+  mounted(){
+    utils.baseRequest({url:'/api/order/info'}).then((res) => {
+      console.log('order-mounted',res)
+    })
   }
 }
 
@@ -21,7 +32,6 @@ export default new Index();
 
 </script>
 <style>
-
 .scroller-wrap {
   display: flex;
   flex-direction: column;
@@ -33,7 +43,7 @@ export default new Index();
 {
   "base": {
     "usingComponents": {
-      "demo-com": "/components/demo-com/demo-com"
+      
     }
   },
   "wx": {
@@ -55,16 +65,6 @@ export default new Index();
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": false,
     "onReachBottomDistance": 50
-  },
-  "qq": {
-    "navigationBarTitleText": "index",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#E2E2E2"
-  },
-  "tt": {
-    "navigationBarTitleText": "index",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#E2E2E2"
   }
 }
 </script>

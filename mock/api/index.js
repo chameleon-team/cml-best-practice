@@ -1,4 +1,4 @@
-const apiWhiteList = require('./white-list/index')
+const apiWhiteList = require('./white-list')
 const { sendRequest } = require('./util')
 const domain = 'https://www.chameleon.com'
 const controllers = []
