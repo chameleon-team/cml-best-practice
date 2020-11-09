@@ -25,32 +25,10 @@ export default new App();
 {
   "wx": {
     "window": {
-      "backgroundTextStyle":"light",
+      "backgroundTextStyle": "light",
       "navigationBarBackgroundColor": "#fff",
       "navigationBarTitleText": "Chameleon",
-      "navigationBarTextStyle":"black"
-    },
-    "subPackages":[{
-      "root":"pages/subpage",
-      "pages":[
-        "page1/page1"
-      ]
-    },
-    {
-      "root":"subpage2",
-      "pages":[
-        "page2/page2"
-      ]
-    }],
-    "preloadRule": {
-      "pages/index/index": {
-        "network": "all",
-        "packages": ["pages/subpage"]
-      },
-      "pages/subpage/page1/page1": {
-        "network": "all",
-        "packages": ["subpage2"]
-      }
+      "navigationBarTextStyle": "black"
     }
   },
   "baidu": {
@@ -60,15 +38,16 @@ export default new App();
       "navigationBarTitleText": "Chameleon",
       "navigationBarTextStyle": "black"
     },
-    "subPackages":[{
-      "root":"pages/subpage",
-      "pages":[
+    "subPackages": [
+      {
+        "root": "pages/subpage",
+        "pages": [
           "page1/page1"
         ]
       },
       {
-        "root":"subpage2",
-        "pages":[
+        "root": "subpage2",
+        "pages": [
           "page2/page2"
         ]
       }
@@ -76,32 +55,15 @@ export default new App();
     "preloadRule": {
       "pages/index/index": {
         "network": "all",
-        "packages": ["pages/subpage"]
+        "packages": [
+          "pages/subpage"
+        ]
       }
     }
   },
   "alipay": {
-      "window": {
-        "defaultTitle": "Chameleon"
-      },
-      "subPackages":[{
-        "root":"pages/subpage",
-        "pages":[
-          "page1/page1"
-        ]
-      },
-      {
-        "root":"subpage2",
-        "pages":[
-          "page2/page2"
-        ]
-      }
-    ],
-    "preloadRule": {
-      "pages/index/index": {
-        "network": "all",
-        "packages": ["pages/subpage"]
-      }
+    "window": {
+      "defaultTitle": "Chameleon"
     }
   }
 }

@@ -5,8 +5,9 @@
 </template>
 
 <script>
-import utils from '../../utils/utils.js'
+import utils from '../common/utils/utils.js'
 import cml from 'chameleon-api'
+// import './index.js'  //循环引用
 class Input {
   data = {
    

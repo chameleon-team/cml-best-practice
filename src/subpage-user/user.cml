@@ -1,28 +1,28 @@
 <template>
         <view class="scroller-wrap">
           
-          <view c-bind:tap="handleOrderAPI">handleOrderAPI</view>
+          <view c-bind:tap="handleUserAPI">handleOrderAPI</view>
           
         </view>
 </template>
 
 <script>
-import subUtils from '../../utils/utils.js'
+import subUtils from '../common/utils/utils.js'
 class Index  {
   data = {
     title: "subpage",
-    chameleonSrc: require('../../assets/images/chameleon.png')
+    chameleonSrc: require('../assets/images/chameleon.png')
   }
   methods = {
-    handleOrderAPI(){
+    handleUserAPI(){
       console.log('handleOrderAPI');
-      utils.baseRequest({url:'/api/order/timepicker'}).then((res) => {
+      utils.baseRequest({url:'/api/user/timepicker'}).then((res) => {
       console.log('order-handleOrderAPI',res)
     })
     }
   }
   mounted(){
-    utils.baseRequest({url:'/api/order/info'}).then((res) => {
+    utils.baseRequest({url:'/api/user/info'}).then((res) => {
       console.log('order-mounted',res)
     })
   }

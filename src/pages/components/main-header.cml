@@ -1,0 +1,73 @@
+<template>
+  <view class="demo-com">
+    <view>main-order-header</view>
+  </view>
+</template>
+
+<script>
+import cml from "chameleon-api"
+class DemoCom {
+  props = {
+    
+  }
+
+  data = {
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new DemoCom();
+</script>
+<style>
+.demo-com {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  align-self: center;
+  color: #61c7fc;
+  font-size: 72cpx;
+  margin-top: 160cpx;
+  margin-bottom: 20cpx;
+}
+.logo {
+  width: 150cpx;
+  height: 150cpx;
+  margin-top: 100cpx;
+}
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>

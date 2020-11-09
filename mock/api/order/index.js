@@ -1,5 +1,5 @@
 module.exports = {
-  '/api/order/timepicker': './timepicker',
-  '/api/order/info': './info',
+  '/api/order/timepicker': './order/timepicker',
+  '/api/order/info': './order/info',
 }
 // '接口path': 'mock数据路径'

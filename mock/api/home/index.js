@@ -1,5 +1,5 @@
 module.exports = {
-  '/api/home/config': './config',
-  '/api/home/info': './info',
+  '/api/home/config': './home/config',
+  '/api/home/info': './home/info',
 }
 // '接口path': 'mock数据路径'

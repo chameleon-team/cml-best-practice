@@ -1,3 +1,4 @@
 module.exports = [
-  '/pages/index/index'
+  '/pages/home',
+  // '/subpage-order/order'
 ]

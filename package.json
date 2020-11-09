@@ -7,6 +7,7 @@
   "scripts": {
     "optimize": "node dev-optimize.js",
     "optimize:recover": "node dev-optimize.js -recover"
+
   },
   "license": "MIT",
   "dependencies": {

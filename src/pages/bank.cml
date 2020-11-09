@@ -1,0 +1,62 @@
+<template>
+  <view class="page-demo">
+    <view c-bind:tap='handleBankAPI'>handleHomeAPI</view>
+  </view>
+</template>
+
+<script>
+import utils from '../common/utils/utils.js'
+import cml from 'chameleon-api'
+class Input {
+  data = {
+   
+  }
+  computed = {}
+  watch = {}
+  methods = {
+    handleBankAPI(){
+      utils.baseRequest({url:'/api/bank/config'}).then((res) => {
+        console.log('home-handleHomeAPI',res)
+      })
+    }
+  }
+  mounted() {
+    utils.baseRequest({url:'/api/bank/info'}).then((res) => {
+      console.log('home-mounted',res)
+    })
+  }
+};
+export default new Input();
+</script>
+<style scoped>
+ .page-demo {
+   background: #FAFAFA;
+   position: absolute;
+   top:0;
+   bottom:0;
+   left:0;
+   right:0;
+ }
+ .title-text {
+   color: #999;
+   margin: 30cpx 20cpx 10cpx;
+   display: block;
+   font-size: 28cpx;
+ }
+ .end-item {
+   margin-bottom: 40cpx;
+   position: relative;
+   border-top: 1px solid #D9D9D9;
+   border-bottom: 1px solid #D9D9D9;
+ }
+.input-wrap  {
+   position: relative;
+   border-top: 1px solid #D9D9D9;
+   border-bottom: 1px solid #D9D9D9;
+ }
+</style>
+<script cml-type="json">
+{
+  "base": {}
+}
+</script>

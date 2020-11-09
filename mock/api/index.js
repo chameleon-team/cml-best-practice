@@ -8,8 +8,8 @@ for (const key in apiWhiteList) {
     method: ['get', 'post'],
     path: key,
     controller (req, res, next) {
-      const data = require(element)
-      // 如果有映射 请求本地  没用则请求线上
+      const data = require(element) //这里是各个mock模块的引用路径，注意
+      // 如果有映射 请求本地  没有则请求线上
       if (data && element) {
         res.json(data)
       } else {

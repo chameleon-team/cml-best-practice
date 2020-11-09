@@ -4,13 +4,25 @@
   "routes":[
     {
       "url": "/cml/h5/index",
-      "path": "/pages/home/home",
+      "path": "/pages/home",
+      "name": "首页",
+      "mock": "index.php"
+    },
+    {
+      "url": "/cml/h5/index",
+      "path": "/pages/bank",
       "name": "首页",
       "mock": "index.php"
     },
     {
       "url": "/cml/h5/index2",
-      "path": "/subpage/order/order",
+      "path": "/subpage-order/order",
+      "name": "分包2",
+      "mock": "index.php"
+    },
+    {
+      "url": "/cml/h5/index2",
+      "path": "/subpage-user/user",
       "name": "分包2",
       "mock": "index.php"
     }
