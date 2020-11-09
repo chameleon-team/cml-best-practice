@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "optimize": "node dev-optimize.js",
-    "optimize:recover": "node dev-optimize.js -recover"
+    "optimize:recover": "node dev-optimize.js -recover",
+    "dev":"cml wx dev -n"
 
   },
   "license": "MIT",

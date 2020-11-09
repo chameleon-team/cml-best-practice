@@ -2,6 +2,7 @@
 # optimize 文件夹存放本地开发相关的文件
 # 但是并不上传到git,以避免多人开发导致的冲突，影响开发体验
 
+optimize/ 
 .DS_Store
 .idea
 *.suo

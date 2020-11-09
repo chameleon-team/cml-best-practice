@@ -4,20 +4,26 @@
   "routes":[
     {
       "url": "/cml/h5/index",
-      "path": "/pages/index/index",
+      "path": "/pages/home",
       "name": "首页",
       "mock": "index.php"
     },
     {
-      "url": "/cml/h5/page1",
-      "path": "/pages/page1/page1",
-      "name": "page1",
+      "url": "/cml/h5/index",
+      "path": "/pages/bank",
+      "name": "首页",
       "mock": "index.php"
     },
     {
-      "url": "/cml/h5/page2",
-      "path": "/pages/page2/page2",
-      "name": "page2",
+      "url": "/cml/h5/index2",
+      "path": "/subpage-order/order",
+      "name": "分包2",
+      "mock": "index.php"
+    },
+    {
+      "url": "/cml/h5/index2",
+      "path": "/subpage-user/user",
+      "name": "分包2",
       "mock": "index.php"
     }
   ]

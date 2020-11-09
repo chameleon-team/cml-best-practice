@@ -1,7 +1,10 @@
 /*
+鉴于日常开发中小程序的整个构建会导致构建编译极慢，严重影响团队的开发效率和开发节奏，以及开发心情，恶性循环、新人劝退，开发体验的提升务必、急切、迫切解决
+【功在当代，利在千秋】
 该脚本提供以下能力
 1.根据自动生成原有 router.config.json 的备份文件
-2.根据optimize/keepRoutes.js配置的path字段的值，自动留存对应path的内容，并替换原来的router.config.json
+2.根据配置的path字段的值，自动留存对应path的内容，并替换原来的router.config.json
+恢复该文件的话，直接通过vscode的撤销变更恢复即可；
 
 需要考虑的情况：
 1.多次执行该文件，如果有备份文件则不会再复制
@@ -10,6 +13,7 @@
 4.备份路由永远都是最新的，因此只需要在本地保留一份即可
 5.如果出现问题，只需要将router.config.json文件通过vscode撤回更新即可
 6.出现意外情况可以手动解决
+有任何其他疑问找@王梦君
 
 使用方式
 0.第一次需要首先执行一遍 node dev-optimize.js
@@ -31,7 +35,7 @@ const appCMLPath = path.resolve(__dirname, 'src/app/app.cml')
 const backupAppCMLPath = path.resolve(__dirname, `${OPTIMIZE_DIR_NAME}/app.cml`)
 
 // 为了减少冲突，先修改成在 optimize/keepRoutes.js 中修改要保留哪些路由
-const DEFAULT_ROUTE_PATH = 'module.exports = [\'/pages/index/index\']'
+const DEFAULT_ROUTE_PATH = 'module.exports = [\'/pages/launch/launch\']'
 
 initKeepedRoutes()
 const keepedRoutes = require(`./${OPTIMIZE_DIR_NAME}/keepRoutes.js`)
@@ -97,7 +101,6 @@ function deleteSubpageConfig () {
   const newScriptJsonContent = `${matchResult[1]}\n${JSON.stringify(scriptJson, '', 2)}\n${matchResult[3]}`
   const newAppCMLContent = appCMLContent.replace(matchResult[0], newScriptJsonContent)
   fs.writeFileSync(appCMLPath, newAppCMLContent)
-  debugger
 }
 function initKeepedRoutes () {
   const optimizeDir = path.resolve(__dirname, OPTIMIZE_DIR_NAME)
