@@ -158,14 +158,16 @@ module.exports = {
 * `src/optimize/keepRoutes.js`中修改路由要按需构建的路由
 * `npm run optimize`   然后 `npm run dev`
 
+src/optimize/keepRoutes.js
+
 ```javascript
 module.exports = [
   '/pages/home',
 ]
-
 ```
-
 ![after](./after.png)
+
+当我们以按需构建这种形式去开发的时候，整体的【框架编译】和【开发这工具编译】的时间会有**50%~80%**的降低，大大提高了开发效率，同时对于各种单页面场景也会更容易在本地进行开发，前后端可以完全解耦
 
 
 
