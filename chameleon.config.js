@@ -46,4 +46,26 @@ cml.config.merge({
     circularDependency:true,//
   }
 })
+cml.utils.plugin('webpackConfig', function({ type, media, webpackConfig }, cb) {
+  // cb函数用于设置修改后的配置
+  debugger;
+  //1.0.6 之前的版本可以在这里通过回调删除调试信息
+  //http://cml.didi.cn/faq/#%E5%8D%87%E7%BA%A7chameleon-tool-1-0-6%EF%BC%8C%E9%BB%98%E8%AE%A4%E5%88%A0%E9%99%A4%E4%BA%86%E8%B0%83%E8%AF%95%E4%BF%A1%E6%81%AF
+  if(media === 'build'){
+    webpackConfig.plugins.forEach((plugin) => {
+      if(plugin.constructor.name === 'UglifyJsPlugin'){
+        plugin.options =  {
+          compress: {
+            drop_console: true
+          }
+        }
+      }
+    })
+  }
+  cb({
+    type,
+    media,
+    webpackConfig
+  });
+});
 
